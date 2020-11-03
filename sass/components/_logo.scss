@@ -1,0 +1,51 @@
+.logo {
+  font-family: $secondary-font;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.667;
+  letter-spacing: 0.03em;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 26px;
+    line-height: 1.192;
+  }
+
+  .header & {
+    @media screen and (min-width: 768px) {
+      padding-top: 21px;
+      padding-bottom: 21px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      padding-top: 26px;
+      padding-bottom: 26px;
+    }
+  }
+
+  &-color {
+    color: $accent-color;
+  }
+
+  &-color-header {
+    color: $secondary-color;
+
+    @media screen and (min-width: 1200px) {
+      color: #000;
+    }
+  }
+
+  &-color-footer {
+    color: $color-theme-color;
+  }
+}
+
+//     &-footer {
+//       color: $color-theme-color;
+//     }
+//   }
+
+//   .footer-item > & {
+//     margin-bottom: 20px;
+//   }
+// }

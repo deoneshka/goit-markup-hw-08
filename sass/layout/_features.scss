@@ -1,0 +1,75 @@
+.features {
+  &-list {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      flex-wrap: wrap;
+    }
+
+    &-subtitle {
+      color: $secondary-color;
+      margin-bottom: 10px;
+    }
+
+    &-text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.714;
+      letter-spacing: 0.03em;
+      color: $main-color;
+    }
+  }
+
+  &-list-item {
+    @media screen and (min-width: 768px) {
+      width: 354px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 270px;
+    }
+  }
+
+  &-list-item::before {
+    content: "";
+    display: block;
+    height: 120px;
+    background-color: $background-main-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 4px;
+    margin-bottom: 30px;
+  }
+
+  &-list-item:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &-list-item:nth-child(4n + 1),
+  &-list-item:nth-child(4n + 2) {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.one::before {
+  background-image: url(../images/features/features-img-1.svg);
+}
+
+.two::before {
+  background-image: url(../images/features/features-img-2.svg);
+}
+
+.three::before {
+  background-image: url(../images/features/features-img-3.svg);
+}
+
+.four::before {
+  background-image: url(../images/features/features-img-4.svg);
+}
