@@ -14,13 +14,7 @@
     margin-right: 8px;
   }
 
-  &-buttons:nth-child(3) {
-    @media screen and (max-width: 767px) {
-      margin-right: 0;
-    }
-  }
-
-  &-buttons:first-child {
+  &-buttons:nth-child(-n + 4) {
     @media screen and (max-width: 767px) {
       margin-bottom: 15px;
     }

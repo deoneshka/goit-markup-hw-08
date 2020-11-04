@@ -244,13 +244,7 @@ img {
 }
 
 @media screen and (max-width: 767px) {
-  .portfolio-list-buttons:nth-child(3) {
-    margin-right: 0;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .portfolio-list-buttons:first-child {
+  .portfolio-list-buttons:nth-child(-n + 4) {
     margin-bottom: 15px;
   }
 }
@@ -521,7 +515,6 @@ img {
   align-items: center;
   flex-grow: 1;
   justify-content: space-between;
-  z-index: 999;
 }
 
 .menu-container.is-open {

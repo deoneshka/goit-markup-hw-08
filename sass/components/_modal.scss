@@ -8,8 +8,19 @@
   overflow-y: scroll;
   transition: all 500ms linear;
 
+  @media screen and (max-width: 1199px) {
+    padding-top: 208px;
+    padding-bottom: 208px;
+  }
+
   @media screen and (max-width: 767px) {
-    padding: 94px 15px;
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+
+  @media screen and (max-width: 479px) {
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
   &.is-hidden {
@@ -21,26 +32,38 @@
 }
 
 .modal {
+  position: relative;
   background: $color-theme-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transform: translate(0, 0) rotate(360deg) scale(1);
+  transform: rotate(360deg) scale(1);
   transition: all 500ms linear 500ms;
   padding: 40px;
 
+  .backdrop.is-hidden & {
+    transform: rotate(0deg) scale(0);
+    transition: all 500ms linear;
+
+    @media screen and (min-width: 480px) {
+      transform: translate(-50%) rotate(0deg) scale(0);
+    }
+
+    @media screen and (min-width: 1200px) {
+      transform: translate(-50%, -50%) rotate(0deg) scale(0);
+    }
+  }
+
   @media screen and (min-width: 480px) {
-    position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    transform: translate(-50%) rotate(360deg) scale(1);
     width: 450px;
-    height: 609px;
   }
 
   @media screen and (min-width: 1200px) {
+    top: 50%;
     width: 528px;
-    height: 581px;
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
   }
 
   &-title {
@@ -56,11 +79,6 @@
       font-size: 20px;
       line-height: 1.15;
     }
-  }
-
-  .backdrop.is-hidden & {
-    transform: translate(-50%, -50%) rotate(0deg) scale(0);
-    transition: all 500ms linear;
   }
 }
 
@@ -138,12 +156,11 @@
   }
 
   &-policy-label {
+    position: relative;
     color: $main-color;
+    padding-left: 24px;
     margin-top: 20px;
     margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   &-policy-link {
@@ -166,10 +183,12 @@
 
   &-policy-label::before {
     content: "";
-    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
     width: 16px;
     height: 15px;
-    margin-right: 8px;
     background-image: url(../images/backdrop/backdrop-checkbox-img-1.svg);
 
     .modal-form-policy:checked + & {
